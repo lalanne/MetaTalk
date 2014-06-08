@@ -11,11 +11,11 @@
 \begin{itemize}
 \item Textual Macros are macros that directly affect the text of the programming 
     language without knowing about or dealing with the meaning of the language \emph{e.g.} C 
-    preprocessor and the M4 macro processor. 
+    preprocessor and the M4 macro processor \cite{macrosibm}. 
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{C preprocessor}
+\begin{frame}[fragile]{C preprocessor SWAP}
 \inputminted[mathescape,
            linenos,
            numbersep=5pt,
@@ -40,5 +40,27 @@
 \item if you pass tmp\_c as an argument the macro will fail.
 \end{itemize}
 \end{frame}
+
+\begin{frame}[fragile]{C preprocessor MIN}
+\inputminted[mathescape,
+           linenos,
+           numbersep=5pt,
+           frame=lines,
+           bgcolor=White,
+           fontsize=\scriptsize,
+           linenos,
+           framesep=2mm]{c++}
+           {/Users/lalanne/MyCode/GitHubProjects/MP_Talk/macro_min.cpp} 
+\end{frame}
+
+\begin{frame}{The MIN case}
+\begin{itemize}
+\item necessary parenthesis (operator precedence).
+\item When one of the arguments is a function is going to be call twice. (performance, duplicated calculation).
+\end{itemize}
+\end{frame}
+
+
+
 
 
