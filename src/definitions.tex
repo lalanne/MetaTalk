@@ -1,12 +1,29 @@
 \begin{frame}{Definitions}
 \begin{enumerate}
-\item Some definitions here ,,,,,.....
-\item some other definitions right here\ldots
+\item Writing programs that generate or manipulate programs as their data.
+\item A program that manipulates code.
+\item Code-generating programs are sometimes called meta-programs; writing such programs
+    is called meta-programming.
 \end{enumerate}
 \end{frame}
 
-\begin{frame}{Pre-processor}
+\begin{frame}{Textual macro languages}
 \begin{enumerate}
-\item some pre-processor stuff  
+\item Textual Macros are macros that directly affect the text of the programming 
+    language without knowing about or dealing with the meaning of the language \emph{e.g.} C 
+    preprocessor and the M4 macro processor. 
 \end{enumerate}
 \end{frame}
+
+\begin{frame}[fragile]{C preprocessor}
+\inputminted[mathescape,
+           linenos,
+           numbersep=5pt,
+           frame=lines,
+           bgcolor=White,
+           fontsize=\scriptsize,
+           linenos,
+           framesep=2mm]{c++}
+           {/Users/lalanne/MyCode/GitHubProjects/MP_Talk/macro_swap.cpp} 
+\end{frame}
+
