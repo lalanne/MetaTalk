@@ -18,7 +18,8 @@ SET(LATEX_OUTPUT_PATH bin)
 SET(CMAKE_CURRENT_SOURCE_DIR src)
 
 ADD_LATEX_DOCUMENT(meta.tex
-                INPUTS definitions.tex macros.tex cppmeta.tex cppdesign.tex cppexp.tex time0.tex current.tex challenges.tex references.tex
+                INPUTS definitions.tex macros.tex cppmeta.tex cppdesign.tex gilles.tex cppexp.tex time0.tex current.tex challenges.tex references.tex 
+                INPUTS crtp.tex
                 IMAGE_DIRS figures
                 PGF_DIRS figures
                 DEFAULT_PDF
