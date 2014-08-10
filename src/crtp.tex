@@ -75,18 +75,19 @@
 \begin{figure}
 \begin{tikzpicture}[font=\footnotesize,xshift=-25mm,yshift=-17mm]
 \begin{axis}[
+ybar,
 scale only axis,
-xmin=  1,xmax=240,
+xmin=  1,xmax=3,
 minor tick num =4,
 every tick/.style={thick},
-xlabel=hw threads, ylabel=time/s,
+ylabel=seconds,
 width=0.55\textwidth,
 ]
-\addplot +[blue,thick] table[x index=0, y index=  1] {figures/vtune.dat};
+\addplot +[blue,thick] table[x index=0, y index=  1] {/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/vtune.dat};
 \end{axis}
 \end{tikzpicture}
 \end{figure}
 \vspace{20mm}
-\par{15 MPI processes each 4 threads running on Xeon Phi}
+\par{}
 \end{frame}
 
