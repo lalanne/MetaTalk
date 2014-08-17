@@ -1,0 +1,10 @@
+\begin{frame}{Virtual Tables} 
+    \begin{itemize}
+        \item Support dynamic dispatching(run-time method binding).
+        \item When a virtual method it is defined, the compiler adds a hidden member variable to the class that defines this virtual method.
+        \item This hidden member variable points to a \emph{Virtual Method Table(VTable)}, this is usually an array of pointers.
+        \item At run time these pointers will be set to point to the right function. 
+        \item At compile time it is not yet known if the base function is to be called or a derived one implemented  by a class that inherits from the base class.
+    \end{itemize}
+\end{frame}
+
