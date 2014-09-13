@@ -1,44 +1,72 @@
-\begin{frame}{Macros}
-\begin{itemize}
-\item Writing programs that generate or manipulate programs as their data.
-\item A program that manipulates code.
-\item Code-generating programs are sometimes called meta-programs; writing such programs
-    is called meta-programming.
-\end{itemize}
+\begin{frame}{Textual macro languages}
+    \begin{itemize}
+        \item Textual Macros are macros that directly affect the text of the 
+            programming language without knowing about or dealing with the 
+            meaning of the language \emph{e.g.} C preprocessor\cite{macrosibm}. 
+
+        \item Allows you to write small Domain Specific Languages(DSLs).
+
+        \item Some times these small DSLs are easier to write and maintain than
+            the the same construction in the target language.
+
+        \item Textual macros affect the text of the program without dealing 
+            with semantics.
+    \end{itemize}
 \end{frame}
 
-\begin{frame}{Textual macro languages}
-\begin{itemize}
-\item Textual Macros are macros that directly affect the text of the programming 
-    language without knowing about or dealing with the meaning of the language \emph{e.g.} C 
-    preprocessor and the M4 macro processor \cite{macrosibm}. 
-\end{itemize}
+\begin{frame}{C/C++ \emph{\#define} Macro}
+    \begin{itemize}\addtolength{\itemsep}{1\baselineskip}
+        \item Textual macro expansion.
+
+        \item Basic way to do basic metaprogramming.
+    \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{C preprocessor SWAP}
-\inputminted[mathescape,
-           linenos,
-           numbersep=5pt,
-           frame=lines,
-           bgcolor=White,
-           fontsize=\scriptsize,
-           linenos,
-           framesep=2mm]{c++}
-           {/Users/lalanne/MyCode/GitHubProjects/MP_Talk/macro_swap.cpp} 
+    \inputminted[mathescape,
+                linenos,
+                numbersep=5pt,
+                frame=lines,
+                bgcolor=White,
+                fontsize=\scriptsize,
+                linenos,
+                framesep=2mm]{c++}
+                {/Users/lalanne/MyCode/GitHubProjects/MP_Talk/macro_swap.cpp} 
+\end{frame}
+
+\begin{frame}[fragile]{C preprocessor SWAP expanded}
+    \inputminted[mathescape,
+                linenos,
+                numbersep=5pt,
+                frame=lines,
+                bgcolor=White,
+                fontsize=\scriptsize,
+                linenos,
+                framesep=2mm]{c++}
+                {/Users/lalanne/MyCode/GitHubProjects/MP_Talk/macro_swap_expanded.cpp} 
 \end{frame}
 
 \begin{frame}{Advantages}
-\begin{itemize}
-\item function call too much overhead for this simple operation (myth).
-\item you would have to code different functions for different types.
-\end{itemize}
+    \begin{itemize}\addtolength{\itemsep}{1\baselineskip}
+        \item Function call too much overhead for this simple operation (myth).
+
+        \item With big types you end up using pointers(aliasing).
+            {\color{red}mmmm check!}
+
+        \item Different functions for different types.
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Disadvantages}
-\begin{itemize}
-\item you do not get any type of type safety.
-\item if you pass tmp\_c as an argument the macro will fail.
-\end{itemize}
+    \begin{itemize}\addtolength{\itemsep}{1\baselineskip}
+        \item C/C++ preprocessor allow limited arguments for Macros.
+
+        \item You do not get any type of type safety.
+
+        \item If you pass tmp\_c as an argument the macro will fail.
+
+        \item Its get very messy when you combine Macros with expressions.
+    \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{C preprocessor MIN}
@@ -54,10 +82,14 @@
 \end{frame}
 
 \begin{frame}{The MIN case}
-\begin{itemize}
-\item necessary parenthesis (operator precedence).
-\item When one of the arguments is a function is going to be call twice. (performance, duplicated calculation).
-\end{itemize}
+    \begin{itemize}\addtolength{\itemsep}{2\baselineskip}
+        \item Necessary parenthesis (operator precedence), what happen if you 
+            do \emph{MIN(27, b=3)}.
+
+        \item When one of the arguments is a function is going to be call twice. 
+            (performance, duplicated calculation). Worst when the function
+            contains side effects(printing).
+    \end{itemize}
 \end{frame}
 
 

@@ -27,6 +27,17 @@
         \item When an object is created at run-time, a pointer is created as a hidden member of this object (usually first member), 
             pointing to the Vtable of this class(pointing to the base address in memory).
         \item This pointer increases the size of the class.
+        \item One virtual table per class.
     \end{itemize}
 \end{frame}
+
+\begin{frame}{Virtual Tables 4} 
+    \begin{itemize}
+        \item This virtual table in turn contains the base addresses of one or more virtual functions of the class. At the time when a virtual function is 
+            called on an object, the vptr of that object provides the base address of the virtual table for that class in memory. This table is used to resolve 
+            the function call as it contains the addresses of all the virtual functions of that class. This is how dynamic binding is resolved during a virtual 
+            function call.
+    \end{itemize}
+\end{frame}
+
 
