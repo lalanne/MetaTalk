@@ -5,7 +5,7 @@ using namespace std;
 
 template<unsigned long N>
 struct binary{
-    static unsigned const value = binary<N/10>::value * 2 + 10;
+    static unsigned const value = binary<N/10>::value * 2 + N%10;
 };
 
 template<>
