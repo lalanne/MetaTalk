@@ -19,10 +19,4 @@ int main(){
     unsigned const five = binary<101>::value;
     unsigned const seven = binary<111>::value;
     unsigned const nine = binary<1001>::value;
-
-    cout<<"one "<<one<<endl;
-    cout<<"three "<<three<<endl;
-    cout<<"five "<<five<<endl;
-    cout<<"seven "<<seven<<endl;
-    cout<<"nine "<<nine<<endl;
 }
