@@ -7,7 +7,7 @@
         \item Allows you to write small Domain Specific Languages(DSLs).
 
         \item Some times these small DSLs are easier to write and maintain than
-            the the same construction in the target language.
+            the same construction in the target language.
 
         \item Textual macros affect the text of the program without dealing 
             with semantics.
@@ -36,14 +36,14 @@
 
 \begin{frame}[fragile]{C preprocessor SWAP expanded}
     \inputminted[mathescape,
-                linenos,
-                numbersep=5pt,
-                frame=lines,
-                bgcolor=White,
-                fontsize=\scriptsize,
-                linenos,
-                framesep=2mm]{c++}
-                {/Users/lalanne/MyCode/GitHubProjects/MP_Talk/macro_swap_expanded.cpp} 
+        linenos,
+        numbersep=5pt,
+        frame=lines,
+        bgcolor=White,
+        fontsize=\scriptsize,
+        linenos,
+        framesep=2mm]{c++}
+        {/Users/lalanne/MyCode/GitHubProjects/MP_Talk/macro_swap_expanded.cpp} 
 \end{frame}
 
 \begin{frame}{Advantages}
@@ -60,8 +60,10 @@
 \begin{frame}{Disadvantages}
     \begin{itemize}\addtolength{\itemsep}{1\baselineskip}
         \item C/C++ preprocessor allow limited arguments for Macros.
+            {\color{red} check how many!}
 
         \item You do not get any type of type safety.
+            {\color{red} some kind of example of this}
 
         \item If you pass tmp\_c as an argument the macro will fail.
 
