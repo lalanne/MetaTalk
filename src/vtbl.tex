@@ -1,43 +1,191 @@
-\begin{frame}{Virtual Tables 1} 
+\begin{frame}{Dynamic Dispatching}
     \begin{itemize}
-        \item Support dynamic dispatching(run-time method binding). (C++, D and C\#)
-        \item When a virtual method it is defined, the compiler adds a hidden member variable to the class that defines this virtual method.
-        \item This hidden member variable points to a \emph{Virtual Method Table(VTable)}, this is usually an array of pointers.
-        \item At run time these pointers will be set to point to the right function(adresses to the real function called). 
-        \item At compile time it is not yet known if the base function is to be called or a derived one implemented  by a class that inherits from the base class.
-        \item  The object of the class containing the virtual function contains a virtual pointer that points to the base address of the virtual table in memory.
+        \item When designing a system you usually know which kind of interface
+            do you want but not the concrete implementation
+        \item The goal is to reduce the effort in changing implementations
+        \item \textbf{Dynamic Dispatching:} Which mplementation of a 
+            method(class function) to call at run-time
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Virtual Tables 2} 
-    \begin{itemize}
-        \item Contains the addresses of the methods dynamically bounded.
-        \item Methods calls are performed by fetching the addresses from the table.
-        \item Whenever there is a virtual function call, the v-table is used to resolve to the function address.
-        \item The dispatch table it is the same for all the objects belonging to the same class it is \emph{shared} between them.
-        \item Objects belonging to type-compatible classes (siblings in an inheritance hierarchy) will have dispatch tables with the same \emph{layout}.
-        \item The address of a given method will appear at the same offset for all type-compatible classes.
-    \end{itemize}
+\begin{frame}[fragile]{Dynamic Dispatching, How does it look like?}
+    \begin{columns}[T]
+        \begin{column}[T]{5cm}
+            \inputminted[mathescape,
+                       linenos,
+                       numbersep=2pt,
+                       frame=lines,
+                       bgcolor=White,
+                       fontsize=\tiny,
+                       linenos,
+                       framesep=1mm]{c++}
+                       {/Users/lalanne/MyCode/GitHubProjects/MetaTalk/src/code/dd_1.cpp} 
+        \end{column}
+        \begin{column}[T]{5cm}
+            \inputminted[mathescape,
+                   linenos,
+                   numbersep=2pt,
+                   frame=lines,
+                   bgcolor=White,
+                   fontsize=\tiny,
+                   linenos,
+                   framesep=1mm]{c++}
+                   {/Users/lalanne/MyCode/GitHubProjects/MetaTalk/src/code/dd_2.cpp}
+        \end{column}
+    \end{columns}
 \end{frame}
 
-\begin{frame}{Virtual Tables 3} 
-    \begin{itemize}
-        \item Implementation of this method it is not in the standard (C++). 
-        \item Separate Vtable for each class.
-        \item When an object is created at run-time, a pointer is created as a hidden member of this object (usually first member), 
-            pointing to the Vtable of this class(pointing to the base address in memory).
-        \item This pointer increases the size of the class.
-        \item One virtual table per class.
-    \end{itemize}
+\begin{frame}{Virtual Functions}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=70mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/ddp1.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
 \end{frame}
 
-\begin{frame}{Virtual Tables 4} 
-    \begin{itemize}
-        \item This virtual table in turn contains the base addresses of one or more virtual functions of the class. At the time when a virtual function is 
-            called on an object, the vptr of that object provides the base address of the virtual table for that class in memory. This table is used to resolve 
-            the function call as it contains the addresses of all the virtual functions of that class. This is how dynamic binding is resolved during a virtual 
-            function call.
-    \end{itemize}
+\begin{frame}{Virtual Functions}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=70mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/classdiag.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
 \end{frame}
 
+\begin{frame}{Virtual Functions}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=70mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/vtbl1.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Virtual Functions}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=70mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/vtbl1_1.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Virtual Functions}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=70mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/vtbl2.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Virtual Functions}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=70mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/vtbl3.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Virtual Functions}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=70mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/vtbl3_1.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Virtual Functions}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=70mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/vtbl4.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+
+\begin{frame}{Virtual Functions}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=70mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/vtblpluscall.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Virtual Functions}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=70mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/vtblpluscall1.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Virtual Functions}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=70mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/vtblpluscall2.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Virtual Functions}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=70mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/vtblpluscall3.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Virtual Functions}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=70mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/vtblpluscall4.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Virtual Functions}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=70mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/vtblpluscall5.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Virtual Functions}
+    \begin{itemize}
+        \item First load \emph{vptr} to register (r1)
+        \item Second load \emph{vptr + offset} to register (r2)
+        \item Call function (r2)
+    \end{itemize}
+
+    \begin{itemize}
+        \item Small size overhead(think small classes)
+        \item Call overhead
+    \end{itemize}
+\end{frame}
 
