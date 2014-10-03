@@ -1,11 +1,4 @@
-\begin{frame}[Generate]{Erasing virtual methods, CRTP} 
-\begin{itemize}
-\item Curiously Recurring Template Pattern.
-\item \cite{eli}
-\end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]{CRTP, run time polymorphism}
+\begin{frame}[fragile]{Run Time Polymorphism}
     \begin{columns}[T]
         \begin{column}[T]{5cm}
             \inputminted[mathescape,
@@ -33,7 +26,104 @@
     \end{columns}
 \end{frame}
 
-\begin{frame}[fragile]{CRTP, compile time polymorphism}
+\begin{frame}{Run Time Polymorphism}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=60mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/runcrtpclass.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Run Time Polymorphism}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=40mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/run_addOne.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Run Time Polymorphism}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=40mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/run_addOne1.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+
+\begin{frame}{Run Time Polymorphism}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=40mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/run_loop_asm.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Run Time Polymorphism}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=40mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/run_loop_asm1.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Run Time Polymorphism}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=40mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/run_loop_asm2.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Run Time Polymorphism}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=40mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/run_loop_asm3.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Run Time Polymorphism}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=60mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/benchRUN.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Run Time Polymorphism}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=60mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/benchRUN1.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}[Generate]{Erasing virtual methods, CRTP} 
+    \begin{itemize}
+        \item Curiously Recurring Template Pattern\cite{eli}.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Compile Time Polymorphism}
     \begin{columns}[T]
         \begin{column}[T]{5cm}
             \inputminted[mathescape,
@@ -70,34 +160,114 @@
     \end{columns}
 \end{frame}
 
-\begin{frame}[fragile]{Compile time vs Run time}
-    \begin{columns}[T] % contents are top vertically aligned
-        \begin{column}[T]{5cm} % each column can also be its own environment
-            \begin{itemize}
-            \item ~15x faster.
-            \end{itemize}
-        \end{column}
 
-        \begin{column}[T]{5cm} % alternative top-align that's better for graphics
-            \vspace{20mm}
-            \begin{figure}
-                \begin{tikzpicture}[font=\footnotesize,xshift=-25mm,yshift=-17mm]
-                    \begin{axis}[
-                            ybar,
-                            xtick=data,
-                            scale only axis,
-                            xticklabels={run time, compile time},
-                            every tick/.style={thick},
-                            ylabel=seconds,
-                            width=0.55\textwidth,
-                        ]
-                        \addplot +[orange,thick] table[x index=0, y index=  1] {/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/vtune.dat};
-                    \end{axis}
-                \end{tikzpicture}
-            \end{figure}
-            \vspace{20mm}
-            \par{}
-        \end{column}
-    \end{columns}
+\begin{frame}{Compile Time Polymorphism}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=70mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/comp_class.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Compile Time Polymorphism}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=70mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/comp_class1.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Compile Time Polymorphism}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=70mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/comp_class2.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Compile Time Polymorphism}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=70mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/comp_class2_5.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Compile Time Polymorphism}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=70mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/comp_class3.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Compile Time Polymorphism}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=70mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/comp_asm.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Compile Time Polymorphism}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=70mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/comp_asm1.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Compile Time Polymorphism}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=70mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/comp_asm2.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Compile Time Polymorphism}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=70mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/comp_asm3.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Run Time vs Compile Time}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=60mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/bench.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Run Time vs Compile Time}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=60mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/bench1.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
 \end{frame}
 

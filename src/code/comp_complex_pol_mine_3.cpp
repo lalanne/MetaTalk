@@ -1,10 +1,10 @@
 int main(){
 
     Base<Derived>* obj = new Derived();
-    for(unsigned int i=0; i<N*N; ++i){
-        obj->tick(i);
+    for(unsigned int i=0; i<MAX*MAX; ++i){
+        obj->addOne(i);
     }
-    cout<<"result: "<<obj->getValue()<<endl;
+    cout<<"result: "<<obj->result()<<endl;
     delete obj;
 
     return 0;

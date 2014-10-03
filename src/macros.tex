@@ -22,54 +22,46 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{C preprocessor SWAP}
-    \inputminted[mathescape,
-                linenos,
-                numbersep=5pt,
-                frame=lines,
-                bgcolor=White,
-                fontsize=\scriptsize,
-                linenos,
-                framesep=2mm]{c++}
-                {/Users/lalanne/MyCode/GitHubProjects/MP_Talk/macro_swap.cpp} 
+\begin{frame}{C preprocessor SWAP}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=60mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/swap.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
 \end{frame}
 
-\begin{frame}[fragile]{C preprocessor SWAP expanded}
-    \inputminted[mathescape,
-        linenos,
-        numbersep=5pt,
-        frame=lines,
-        bgcolor=White,
-        fontsize=\scriptsize,
-        linenos,
-        framesep=2mm]{c++}
-        {/Users/lalanne/MyCode/GitHubProjects/MP_Talk/macro_swap_expanded.cpp} 
+\begin{frame}{C preprocessor SWAP}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=60mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/swap1.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
 \end{frame}
 
-\begin{frame}{Advantages}
-    \begin{itemize}\addtolength{\itemsep}{1\baselineskip}
-        \item Function call too much overhead for this simple operation (myth).
-
-        \item With big types you end up using pointers(aliasing).
-            {\color{red}mmmm check!}
-
-        \item Different functions for different types.
-    \end{itemize}
+\begin{frame}{C preprocessor SWAP expanded}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=70mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/swapexp1.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
 \end{frame}
 
-\begin{frame}{Disadvantages}
-    \begin{itemize}\addtolength{\itemsep}{1\baselineskip}
-        \item C/C++ preprocessor allow limited arguments for Macros.
-            {\color{red} check how many!}
-
-        \item You do not get any type of type safety.
-            {\color{red} some kind of example of this}
-
-        \item If you pass tmp\_c as an argument the macro will fail.
-
-        \item Its get very messy when you combine Macros with expressions.
-    \end{itemize}
+\begin{frame}{C preprocessor SWAP expanded}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=70mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/swapexp2.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
 \end{frame}
+
 
 \begin{frame}[fragile]{C preprocessor MIN}
 \inputminted[mathescape,
@@ -142,7 +134,25 @@
     \end{itemize}
 \end{frame}
 
+\begin{frame}{Advantages}
+    \begin{itemize}\addtolength{\itemsep}{1\baselineskip}
+        \item Function call too much overhead for this simple operation (myth).
 
+        \item With big types you end up using pointers(aliasing).
+            {\color{red}mmmm check!}
 
+        \item Different functions for different types.
+    \end{itemize}
+\end{frame}
 
+\begin{frame}{Disadvantages}
+    \begin{itemize}\addtolength{\itemsep}{1\baselineskip}
+        \item C/C++ preprocessor allow limited arguments for Macros.
+
+        \item You do not get any type of type safety.
+            {\color{red} some kind of example of this}
+
+        \item Its get very messy when you combine Macros with expressions.
+    \end{itemize}
+\end{frame}
 

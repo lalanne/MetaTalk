@@ -2,22 +2,22 @@
 
 using namespace std;
 
-const unsigned int N = 40000;
+const unsigned int MAX = 35000;
 
-template<typename Implementation>
+template<typename Concrete>
 class Base{
     public:
-        void tick(unsigned int n){ 
-            impl().tick(n);
+        void addOne(unsigned int x){ 
+            implementation().addOne(x);
         }   
     
-        unsigned int getValue(){
-            return impl().getvalue();
+        unsigned int result(){
+            return implementation().result();
         }   
 
     private:
-        Implementation& impl() {
-            return *static_cast<Implementation*>(this);
+        Concrete& implementation() {
+            return *static_cast<Concrete*>(this);
         }   
 };
 

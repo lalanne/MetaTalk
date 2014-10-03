@@ -2,26 +2,26 @@
 
 using namespace std;
 
-const unsigned int N = 40000;
+const unsigned int MAX = 35000;
 
 class Base{
     public:
-        virtual void tick(unsigned int n) = 0;
-        virtual unsigned int getValue() = 0;
+        virtual void addOne(unsigned int x) = 0;
+        virtual unsigned int result() = 0;
 };
 
 class Derived : public Base{
-    unsigned int counter;
+    unsigned int accumulator;
 
     public:
-       Derived() : counter(0){} 
+       Derived() : accumulator(0){} 
 
-        void tick(unsigned int n){ 
-            counter += n;
+        void addOne(unsigned int x){ 
+            accumulator += x;
         }   
 
-        unsigned int getValue(){
-            return counter;
+        unsigned int result(){
+            return accumulator;
         }   
 };
 

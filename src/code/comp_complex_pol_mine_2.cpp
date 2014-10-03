@@ -1,14 +1,14 @@
 class Derived : public Base<Derived> {
-    unsigned int counter;
+    unsigned int accumulator;
 
     public:
-        Derived() : counter(0) {}
+        Derived() : accumulator(0) {}
 
-        void tick(unsigned int n) {
-            counter += n;
+        void addOne(unsigned int x) {
+            accumulator += x;
         }
 
-        unsigned int getvalue() {
-            return counter;
+        unsigned int result() {
+            return accumulator;
         }
 };
