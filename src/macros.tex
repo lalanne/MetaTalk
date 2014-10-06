@@ -1,22 +1,24 @@
-\begin{frame}{Textual macro languages}
+\begin{frame}{Textual Macro Languages}
     \begin{itemize}
         \item Textual Macros are macros that directly affect the text of the 
             programming language without knowing about or dealing with the 
             meaning of the language \emph{e.g.} C preprocessor\cite{macrosibm}. 
 
-        \item Allows you to write small Domain Specific Languages(DSLs).
+        \vspace{5mm}
+
+        \item Allow you to write small Domain Specific Languages(DSLs).
+
+        \vspace{5mm}
 
         \item Some times these small DSLs are easier to write and maintain than
             the same construction in the target language.
 
-        \item Textual macros affect the text of the program without dealing 
-            with semantics.
     \end{itemize}
 \end{frame}
 
 \begin{frame}{C/C++ \emph{\#define} Macro}
     \begin{itemize}\addtolength{\itemsep}{1\baselineskip}
-        \item Textual macro expansion.
+        \item Before compilation macros are expanded(text).
 
         \item Basic way to do basic metaprogramming.
     \end{itemize}
@@ -62,6 +64,15 @@
     \end{center}
 \end{frame}
 
+\begin{frame}{C preprocessor SWAP expanded}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=70mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/swapexp3.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
 
 \begin{frame}[fragile]{C preprocessor MIN}
 \inputminted[mathescape,
@@ -136,12 +147,10 @@
 
 \begin{frame}{Advantages}
     \begin{itemize}\addtolength{\itemsep}{1\baselineskip}
-        \item Function call too much overhead for this simple operation (myth).
+        \item Function call too much overhead simple operations.
 
-        \item With big types you end up using pointers(aliasing).
-            {\color{red}mmmm check!}
-
-        \item Different functions for different types.
+        
+        \item Avoid writing different functions for different argument types.
     \end{itemize}
 \end{frame}
 
@@ -150,9 +159,10 @@
         \item C/C++ preprocessor allow limited arguments for Macros.
 
         \item You do not get any type of type safety.
-            {\color{red} some kind of example of this}
 
         \item Its get very messy when you combine Macros with expressions.
+
+        \item Size of the program.
     \end{itemize}
 \end{frame}
 

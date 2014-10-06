@@ -1,10 +1,17 @@
-\begin{frame}{Dynamic Dispatching}
+\begin{frame}{Dynamic Binding}
     \begin{itemize}
         \item When designing a system you usually know which kind of interface
             do you want but not the concrete implementation
+
+        \vspace{5mm}
+
         \item The goal is to reduce the effort in changing implementations
-        \item \textbf{Dynamic Dispatching:} Which mplementation of a 
-            method(class function) to call at run-time
+
+        \vspace{5mm}
+
+        \item \textbf{Dynamic Binding:} The address of the code in a function
+            invocation is determined at the last possible moment: based 
+            on the dynamic type of the object at runtime
     \end{itemize}
 \end{frame}
 
@@ -148,6 +155,27 @@
         \end{tikzpicture}
     \end{center}
 \end{frame}
+
+\begin{frame}{Virtual Functions}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=50mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/main.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Virtual Functions}
+    \begin{center}
+        \begin{tikzpicture}[]
+            \node[] at (0mm,0mm){
+                \includegraphics[height=50mm]{/Users/lalanne/MyCode/GitHubProjects/MetaTalk/figures/main1.png}\hspace{5mm}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
 
 \begin{frame}{Virtual Functions}
     \begin{itemize}
